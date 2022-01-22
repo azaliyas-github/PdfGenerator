@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="PdfGeneratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="PdfGenerator" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="ru.itis.pdfgenerator.PdfGeneratorApplication" />
+    <option name="HIDE_BANNER" value="true" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
