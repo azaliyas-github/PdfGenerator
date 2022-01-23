@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  pdf-generator:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: pdf-generator
+    secrets:
+      - source: pdf-generator
+        target: pdf-generator.properties
+    command: -Dspring.config.location=/run/secrets/pdf-generator.properties -Dspring.main.banner-mode=OFF
+    networks:
+      - common
+    ports:
+      - 80:8080
+    deploy:
+      resources:
+        limits:
+          cpus: 0.75
+          memory: 256M
+        reservations:
+          cpus: 0.25
+          memory: 192M
+    restart: unless-stopped
+    logging:
+      driver: local
+
+secrets:
+  pdf-generator:
+    file: ./src/main/resources/application.properties
+networks:
+  common: {}
